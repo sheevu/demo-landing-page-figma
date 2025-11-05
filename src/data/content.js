@@ -1,11 +1,19 @@
 export const heroContent = {
   badge: 'Lucknow • MSME Growth Engine',
   title: 'Sudarshan Vyapaar AGI Platform',
-  subtitle: 'India’s chillest AI marketing HQ from Lucknow for MSMEs, creators and startup founders.',
+  subtitle: 'Swadeshi AI HQ for MSMEs, creators and founders to launch, scale and automate in minutes.',
   description:
-    'Launch a bilingual storefront, Hindi CRM and WhatsApp growth engine in 30 minutes. Sudarshan AI Labs blends Swadeshi innovation with agentic automation so every dukaan scales like a pro.',
-  highlights: ['Hindi CRM', 'WhatsApp Orders', 'SEO-ready page', 'Auto KYC', 'Google My Business setup'],
-  hindiSupport: 'अब हर दुकानदार के लिए स्मार्ट डिजिटल मार्केटिंग — सिर्फ ₹89 में शुरुआत, हिंदी-CRM और WhatsApp automation के साथ।',
+    'Launch a bilingual storefront, Hindi CRM and WhatsApp growth engine in 30 minutes. Sudarshan AI Labs blends Digital Swaraj values with agentic automation so every dukaan across Bharat owns its growth journey.',
+  highlights: [
+    'Hindi CRM',
+    'WhatsApp Orders',
+    'SEO-ready Landing Page',
+    'Auto GST & Udyam KYC',
+    'Google My Business Setup',
+    'Weekend Campaign Pods'
+  ],
+  hindiSupport:
+    'अब हर दुकानदार के लिए स्मार्ट डिजिटल मार्केटिंग — सिर्फ ₹89 में शुरुआत, हिंदी-CRM, WhatsApp automation और AI growth साथी के साथ।',
   ctas: [
     { label: 'Start with ₹89', href: '#pricing', primary: true },
     { label: 'Claim Udyam Certificate', href: '#cta', primary: false }
@@ -21,7 +29,7 @@ export const valueCards = [
   {
     title: 'Best affordable digital marketing',
     description:
-      'Launch with ₹89 and graduate to ₹499 / ₹1599 / ₹1899 packs. Hyperlocal SEO, reels and WhatsApp automation stitched for Indian markets.'
+      'Start with ₹89 and graduate to growth pods at ₹499 / ₹1599 / ₹1899. Hyperlocal SEO, reels and WhatsApp automation stitched for Indian markets.'
   },
   {
     title: 'Agentic AI of Digital India',
@@ -32,6 +40,11 @@ export const valueCards = [
     title: 'Hindi-first Vyapaar CRM',
     description:
       'Talk to your CRM in Hindi voice. Smart invoices, inventory sync, auto ledgers and customer insights mapped to Google Sheets.'
+  },
+  {
+    title: 'Govt & Startup India ready',
+    description:
+      'DPIIT-recognised workflows, MSME-compliant governance and Make-in-India infrastructure built for public programs.'
   }
 ];
 
@@ -105,6 +118,10 @@ export const services = [
   {
     name: 'Free Udyam certificate assistance',
     benefit: 'Start GST & tender compliance at zero cost with guided onboarding.'
+  },
+  {
+    name: 'Agentic affiliate & referral wallet',
+    benefit: 'Earn 5% by referring neighbourhood businesses while Sudarshan runs onboarding + KYC.'
   }
 ];
 
@@ -197,6 +214,73 @@ export const seoBoost = [
   {
     title: 'Always-on reporting',
     detail: 'Weekly Vyapaar AGI digest covering impressions, conversions and fresh keywords to target next.'
+  },
+  {
+    title: 'EEAT friendly author pages',
+    detail: 'DPIIT recognised founders, MSME mentors and case studies surfaced to boost Expertise, Experience, Authority and Trust.'
+  }
+];
+
+export const caseStudies = [
+  {
+    title: 'Weekend hotspot x Hazratganj café',
+    outcome: '+162% walk-ins',
+    summary:
+      'Aurora Glow combo with reels + WhatsApp reminders packed the café over 3 weekends. ₹89 storefront captured 312 new contacts.'
+  },
+  {
+    title: 'Creator-led gomti nagar boutique',
+    outcome: '3.4x repeat orders',
+    summary:
+      'Vyapaar AGI nudged fresh drop alerts, auto-invoicing and bilingual reels for brides-to-be. WhatsApp CRM closed 74% of chats.'
+  },
+  {
+    title: 'Indira Nagar cloud kitchen launch',
+    outcome: '₹1.2L month one',
+    summary:
+      'Sudarshan campaign pods shipped menu videos, SEO + Zomato reviews and affiliate loops with RWAs, hitting sell-out evenings.'
+  }
+];
+
+export const eeatHighlights = [
+  {
+    pillar: 'Expertise',
+    detail: 'Real AI growth playbooks tested with 280+ MSMEs, food brands and retailers across Uttar Pradesh.'
+  },
+  {
+    pillar: 'Experience',
+    detail: '5+ years building vernacular AI stacks with Startup India, incubators and govt pilot programs.'
+  },
+  {
+    pillar: 'Authoritativeness',
+    detail: 'Recognised by DPIIT; Sudarshan mentors listed under MSME & innovation networks with published case studies.'
+  },
+  {
+    pillar: 'Trustworthiness',
+    detail: 'Indian servers, Aadhaar masked storage, transparent pricing and consent-first WhatsApp automation.'
+  }
+];
+
+export const faqItems = [
+  {
+    question: 'How fast can I launch my ₹89 storefront?',
+    answer:
+      'Pay via UPI, upload GSTIN or Udyam in-app and your Hindi/English storefront with WhatsApp CTA goes live within 30 minutes.'
+  },
+  {
+    question: 'Can I run campaigns in Hindi + English together?',
+    answer:
+      'Yes. Sudarshan AGI drafts bilingual content, automates translations and keeps SEO keywords for both languages in sync.'
+  },
+  {
+    question: 'Do you help with government tenders or compliances?',
+    answer:
+      'Our compliance pod activates free Udyam support, GST nudges and documentation required for schemes or tenders.'
+  },
+  {
+    question: 'Is there human support beyond AI workflows?',
+    answer:
+      'Every plan unlocks a growth mentor on WhatsApp. Book a strategy jam or request on-ground support right from the dashboard.'
   }
 ];
 
@@ -210,21 +294,3 @@ export const metaContent = {
   twitterHandle: '@sudarshanailabs'
 };
 
-export const eeatHighlights = [
-  {
-    pillar: 'Expertise',
-    detail: 'Real-world AI tools for MSMEs with case studies of ₹89 storefronts gaining visibility.'
-  },
-  {
-    pillar: 'Experience',
-    detail: 'Over 5 years in AI innovation with active government & Startup India collaborations.'
-  },
-  {
-    pillar: 'Authoritativeness',
-    detail: 'Recognised under DPIIT (Start-up India) and partnered with MSME incubation programmes.'
-  },
-  {
-    pillar: 'Trustworthiness',
-    detail: 'Transparent pricing, verified KYC and secure Indian cloud infrastructure.'
-  }
-];

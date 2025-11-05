@@ -11,10 +11,24 @@ import {
   testimonials,
   pricing,
   campaignHighlights,
-  seoBoost
+  seoBoost,
+  caseStudies,
+  eeatHighlights,
+  faqItems
 } from '../../data/content.js';
 import { variantConfigs } from '../../data/variantThemes.js';
-import { Sparkles, Zap, Wand2, MessageCircle, ShieldCheck, Play, ArrowUpRight } from 'lucide-react';
+import {
+  Sparkles,
+  Zap,
+  Wand2,
+  MessageCircle,
+  ShieldCheck,
+  Play,
+  ArrowUpRight,
+  LineChart,
+  Target,
+  HelpCircle
+} from 'lucide-react';
 
 const cardVariants = {
   hidden: { opacity: 0, y: 24 },
@@ -28,6 +42,12 @@ const cardVariants = {
 export default function VariantPage({ variantKey }) {
   const variant = variantConfigs[variantKey];
   const [activeService, setActiveService] = useState(services[0]);
+  const [activeCase, setActiveCase] = useState(caseStudies[0]);
+  const [openFaq, setOpenFaq] = useState(faqItems[0]?.question ?? null);
+
+  const handleFaqToggle = (question) => {
+    setOpenFaq((prev) => (prev === question ? null : question));
+  };
 
   const heroBadge = useMemo(
     () => (
@@ -40,6 +60,20 @@ export default function VariantPage({ variantKey }) {
 
   return (
     <div className="container" data-variant={variant.id}>
+      <motion.div
+        className="variant-gradient"
+        aria-hidden="true"
+        initial={{ opacity: 0, scale: 0.92 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8, delay: 0.1 }}
+      />
+      <motion.div
+        className="variant-grid"
+        aria-hidden="true"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.45 }}
+        transition={{ duration: 1, delay: 0.25 }}
+      />
       <section className="section" style={{ paddingTop: '5rem' }}>
         <div className="hero-grid" id="about">
           <div>
@@ -225,6 +259,8 @@ export default function VariantPage({ variantKey }) {
                   }}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
+                  whileHover={{ y: -8, borderColor: 'var(--accent-2)' }}
+                  whileTap={{ scale: 0.98 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.45 }}
                 >
@@ -235,6 +271,100 @@ export default function VariantPage({ variantKey }) {
             </div>
           </div>
         </motion.div>
+      </section>
+
+      <section className="section" id="case-studies">
+        <div
+          className="grid"
+          style={{ gridTemplateColumns: 'minmax(260px, 320px) 1fr', gap: '2.5rem', alignItems: 'stretch' }}
+        >
+          <motion.div
+            className="glass-panel"
+            style={{ padding: '2.2rem', position: 'relative', overflow: 'hidden' }}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="glow-ring"></div>
+            <div className="noise-layer"></div>
+            <div className="badge" style={{ marginBottom: '1.2rem' }}>
+              <LineChart size={16} /> Real Bharat case studies
+            </div>
+            <h3 className="section-title" style={{ fontSize: '2rem' }}>Lucknow experiments that went viral</h3>
+            <p className="section-subtitle">
+              Tap any card to preview outcomes powered by Sudarshan Launchpad — from Hazratganj cafés to cloud kitchens in Indira
+              Nagar.
+            </p>
+            <motion.div
+              key={activeCase.title}
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.45 }}
+              style={{ marginTop: '2rem', display: 'grid', gap: '0.9rem' }}
+            >
+              <span style={{ fontSize: '0.85rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--accent-3)' }}>
+                Outcome
+              </span>
+              <span className="gradient-text" style={{ fontSize: '2.6rem', fontWeight: 700 }}>
+                {activeCase.outcome}
+              </span>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '1rem' }}>{activeCase.summary}</p>
+              <div className="tag-cloud">
+                {heroContent.highlights.slice(0, 4).map((tag) => (
+                  <span key={tag} className="tag">
+                    <Target size={14} /> {tag}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+          </motion.div>
+
+          <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.5rem' }}>
+            {caseStudies.map((study, idx) => (
+              <motion.button
+                key={study.title}
+                type="button"
+                className="glass-panel case-card"
+                onMouseEnter={() => setActiveCase(study)}
+                onFocus={() => setActiveCase(study)}
+                onClick={() => setActiveCase(study)}
+                whileHover={{ translateY: -10, borderColor: 'var(--accent-2)' }}
+                whileTap={{ scale: 0.98 }}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-60px' }}
+                transition={{ duration: 0.5, delay: idx * 0.05 }}
+                style={{
+                  textAlign: 'left',
+                  padding: '1.8rem',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  borderColor: activeCase.title === study.title ? 'rgba(140, 188, 255, 0.55)' : 'rgba(120, 132, 255, 0.18)',
+                  background:
+                    activeCase.title === study.title
+                      ? 'linear-gradient(160deg, rgba(45, 90, 220, 0.4), rgba(14, 20, 45, 0.8))'
+                      : 'rgba(10, 14, 34, 0.6)'
+                }}
+              >
+                <span
+                  style={{
+                    fontSize: '0.78rem',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.12em',
+                    color: 'var(--accent-2)',
+                    fontWeight: 600
+                  }}
+                >
+                  {study.outcome}
+                </span>
+                <h4 style={{ fontSize: '1.1rem', marginTop: '0.7rem', fontWeight: 600 }}>{study.title}</h4>
+                <p style={{ color: 'var(--text-secondary)', marginTop: '0.7rem', fontSize: '0.96rem' }}>{study.summary}</p>
+                <div className="case-card-highlight" aria-hidden="true" />
+              </motion.button>
+            ))}
+          </div>
+        </div>
       </section>
 
       <section className="section" id="pricing">
@@ -250,6 +380,7 @@ export default function VariantPage({ variantKey }) {
               style={{ padding: '2rem', position: 'relative', overflow: 'hidden' }}
               initial="hidden"
               whileInView="visible"
+              whileHover={{ translateY: -14, borderColor: 'var(--accent-2)' }}
               viewport={{ once: true, margin: '-60px' }}
               variants={cardVariants}
               custom={idx}
@@ -296,7 +427,17 @@ export default function VariantPage({ variantKey }) {
         </motion.div>
         <div className="grid" style={{ marginTop: '2.5rem', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))' }}>
           {campaignHighlights.map((campaign, idx) => (
-            <motion.div key={campaign.title} className="glass-panel" style={{ padding: '2rem', position: 'relative' }} initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-50px' }} variants={cardVariants} custom={idx}>
+            <motion.div
+              key={campaign.title}
+              className="glass-panel"
+              style={{ padding: '2rem', position: 'relative' }}
+              initial="hidden"
+              whileInView="visible"
+              whileHover={{ translateY: -12, borderColor: 'var(--accent-2)' }}
+              viewport={{ once: true, margin: '-50px' }}
+              variants={cardVariants}
+              custom={idx}
+            >
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
                 <span className="badge" style={{ padding: '0.35rem 0.9rem', fontSize: '0.8rem' }}>{campaign.badge}</span>
                 <span style={{ fontSize: '0.8rem', color: 'var(--accent-2)', fontWeight: 600 }}>{campaign.save}</span>
@@ -358,6 +499,35 @@ export default function VariantPage({ variantKey }) {
         </motion.div>
       </section>
 
+      <section className="section" id="eeat">
+        <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+          <div className="badge" style={{ marginBottom: '1.2rem' }}>
+            <HelpCircle size={16} /> SEO + EEAT ready
+          </div>
+          <h2 className="section-title">Proof of expertise, experience & trust</h2>
+          <p className="section-subtitle">
+            Optimised storytelling that search engines love — highlight Startup India recognition, government pilots and transparent pricing in every landing variant.
+          </p>
+        </motion.div>
+        <div className="grid" style={{ marginTop: '2.5rem', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))' }}>
+          {eeatHighlights.map((item, idx) => (
+            <motion.div
+              key={item.pillar}
+              className="glass-panel"
+              style={{ padding: '1.8rem', minHeight: '200px' }}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ translateY: -10, borderColor: 'var(--accent-2)' }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.5, delay: idx * 0.05 }}
+            >
+              <h4 style={{ fontSize: '1.05rem', fontWeight: 600 }}>{item.pillar}</h4>
+              <p style={{ color: 'var(--text-secondary)', marginTop: '0.7rem', fontSize: '0.95rem' }}>{item.detail}</p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
       <section className="section" id="testimonials">
         <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
           <h2 className="section-title">What Lucknow says</h2>
@@ -365,11 +535,66 @@ export default function VariantPage({ variantKey }) {
         </motion.div>
         <div className="testimonials-grid" style={{ marginTop: '2.2rem' }}>
           {testimonials.map((testimonial, idx) => (
-            <motion.div key={testimonial.author} className="glass-panel" style={{ padding: '1.8rem' }} initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-60px' }} variants={cardVariants} custom={idx}>
+            <motion.div
+              key={testimonial.author}
+              className="glass-panel"
+              style={{ padding: '1.8rem' }}
+              initial="hidden"
+              whileInView="visible"
+              whileHover={{ translateY: -10, borderColor: 'var(--accent-2)' }}
+              viewport={{ once: true, margin: '-60px' }}
+              variants={cardVariants}
+              custom={idx}
+            >
               <p style={{ fontSize: '1.05rem', color: 'var(--text-secondary)' }}>{testimonial.quote}</p>
               <p style={{ marginTop: '1.1rem', fontWeight: 600 }}>{testimonial.author}</p>
             </motion.div>
           ))}
+        </div>
+      </section>
+
+      <section className="section" id="faq">
+        <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+          <h2 className="section-title">FAQs before you launch</h2>
+          <p className="section-subtitle">Still wondering about onboarding, compliance or bilingual campaigns? Get answers below or ping us on WhatsApp.</p>
+        </motion.div>
+        <div className="grid" style={{ marginTop: '2.2rem', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))' }}>
+          {faqItems.map((faq) => {
+            const isOpen = openFaq === faq.question;
+            return (
+              <motion.div
+                key={faq.question}
+                className="glass-panel faq-card"
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-60px' }}
+                transition={{ duration: 0.45 }}
+              >
+                <button
+                  type="button"
+                  className="faq-trigger"
+                  onClick={() => handleFaqToggle(faq.question)}
+                  aria-expanded={isOpen}
+                >
+                  <span>{faq.question}</span>
+                  <motion.span
+                    animate={{ rotate: isOpen ? 45 : 0 }}
+                    transition={{ type: 'spring', stiffness: 260, damping: 18 }}
+                  >
+                    +
+                  </motion.span>
+                </button>
+                <motion.div
+                  initial={false}
+                  animate={{ height: isOpen ? 'auto' : 0, opacity: isOpen ? 1 : 0 }}
+                  transition={{ duration: 0.35, ease: 'easeInOut' }}
+                  style={{ overflow: 'hidden' }}
+                >
+                  <p style={{ color: 'var(--text-secondary)', marginTop: '0.9rem' }}>{faq.answer}</p>
+                </motion.div>
+              </motion.div>
+            );
+          })}
         </div>
       </section>
 

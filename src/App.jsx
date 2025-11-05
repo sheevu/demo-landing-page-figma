@@ -11,6 +11,15 @@ const variants = {
   dawn: { label: 'Dawn Rise', component: DawnLanding, description: 'Warm sunrise gradients, mindful layouts and interactive flows.' }
 };
 
+const navLinks = [
+  { label: 'About', href: '#about' },
+  { label: 'Services', href: '#services' },
+  { label: 'Portal', href: '#portal' },
+  { label: 'Pricing', href: '#pricing' },
+  { label: 'Campaigns', href: '#campaigns' },
+  { label: 'Testimonials', href: '#testimonials' }
+];
+
 export default function App() {
   const [activeVariant, setActiveVariant] = useState('aurora');
   const [navOpen, setNavOpen] = useState(false);
@@ -21,26 +30,28 @@ export default function App() {
     document.documentElement.dataset.theme = activeVariant === 'aurora' ? 'aurora' : activeVariant === 'neon' ? 'neon' : 'dawn';
   }, [activeVariant]);
 
+  const handleNavClose = () => setNavOpen(false);
+
   return (
     <div>
       <header
         style={{
           position: 'sticky',
           top: 0,
-          zIndex: 20,
+          zIndex: 30,
           backdropFilter: 'blur(18px)',
           background: 'rgba(6, 8, 20, 0.82)',
           borderBottom: '1px solid rgba(120, 132, 255, 0.18)'
         }}
       >
-        <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '1.2rem 0' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.9rem' }}>
+        <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '1.5rem', padding: '1rem 0' }}>
+          <a href="#about" style={{ display: 'flex', alignItems: 'center', gap: '0.9rem' }}>
             <div
               style={{
-                width: '42px',
-                height: '42px',
+                width: '44px',
+                height: '44px',
                 borderRadius: '14px',
-                background: 'linear-gradient(135deg, rgba(114, 92, 255, 0.55), rgba(98, 202, 255, 0.55))',
+                background: 'linear-gradient(135deg, rgba(114, 92, 255, 0.65), rgba(98, 202, 255, 0.65))',
                 display: 'grid',
                 placeItems: 'center',
                 fontWeight: 700,
@@ -51,25 +62,72 @@ export default function App() {
             </div>
             <div>
               <p style={{ fontWeight: 600 }}>Sudarshan AI Labs</p>
-              <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>Lucknow • MSME Growth Engine</p>
+              <p style={{ fontSize: '0.82rem', color: 'var(--text-secondary)' }}>Lucknow • MSME Growth Engine</p>
             </div>
-          </div>
+          </a>
 
-          <nav style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
-            <div className="theme-switcher" style={{ display: navOpen ? 'flex' : '', flexWrap: 'wrap' }}>
-              <Palette size={18} />
-              {Object.entries(variants).map(([key, value]) => (
-                <button key={key} onClick={() => setActiveVariant(key)} className={activeVariant === key ? 'active' : ''}>
-                  {value.label}
-                </button>
-              ))}
-            </div>
-            <button className="secondary-btn" style={{ display: 'inline-flex', gap: '0.6rem', alignItems: 'center' }}>
-              <PhoneCall size={18} /> Book demo
-            </button>
-            <button className="secondary-btn" style={{ display: 'none' }} onClick={() => setNavOpen((prev) => !prev)}>
+          <nav style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+            <button
+              className="secondary-btn nav-toggle"
+              style={{ display: 'inline-flex', gap: '0.6rem', alignItems: 'center' }}
+              onClick={() => setNavOpen((prev) => !prev)}
+              aria-label="Toggle navigation"
+            >
               <Menu size={18} />
             </button>
+            <div
+              style={{
+                position: navOpen ? 'absolute' : 'static',
+                top: navOpen ? '5rem' : undefined,
+                right: navOpen ? '1.5rem' : undefined,
+                display: navOpen ? 'grid' : 'flex',
+                gridTemplateColumns: navOpen ? '1fr' : undefined,
+                gap: '1rem',
+                alignItems: 'center',
+                background: navOpen ? 'rgba(12, 16, 34, 0.95)' : 'transparent',
+                padding: navOpen ? '1.5rem' : 0,
+                borderRadius: navOpen ? '20px' : 0,
+                border: navOpen ? '1px solid rgba(120, 132, 255, 0.2)' : 'none'
+              }}
+              className="nav-stack"
+              data-open={navOpen}
+            >
+              <div className="theme-switcher" style={{ flexWrap: 'wrap' }}>
+                <Palette size={18} />
+                {Object.entries(variants).map(([key, value]) => (
+                  <button
+                    key={key}
+                    onClick={() => {
+                      setActiveVariant(key);
+                      handleNavClose();
+                    }}
+                    className={activeVariant === key ? 'active' : ''}
+                  >
+                    {value.label}
+                  </button>
+                ))}
+              </div>
+              <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '1rem', justifyContent: 'center' }}>
+                {navLinks.map((link) => (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    style={{ color: 'var(--text-secondary)', fontWeight: 500 }}
+                    onClick={handleNavClose}
+                  >
+                    {link.label}
+                  </a>
+                ))}
+                <a
+                  href="https://wa.me/919696969696"
+                  className="primary-btn"
+                  style={{ display: 'inline-flex', alignItems: 'center', gap: '0.6rem' }}
+                  onClick={handleNavClose}
+                >
+                  <PhoneCall size={18} /> ₹89 Launchpad
+                </a>
+              </div>
+            </div>
           </nav>
         </div>
       </header>

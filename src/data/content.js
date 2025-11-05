@@ -1,66 +1,60 @@
 export const heroContent = {
   badge: 'Lucknow • MSME Growth Engine',
   title: 'Sudarshan Vyapaar AGI Platform',
-  subtitle: 'Bharat’s Swadeshi Hindi CRM + Agentic AI for MSMEs',
+  subtitle: 'India’s chillest AI marketing HQ from Lucknow for MSMEs, creators and startup founders.',
   description:
-    'Turn any offline dukaan into a digital powerhouse in 30 minutes. WhatsApp-first growth, bilingual dashboards, ₹89 launch packs and AI-led guidance every week.',
-  highlights: [
-    'Hindi CRM',
-    'WhatsApp Orders',
-    'SEO-ready page',
-    'Auto KYC',
-    'Google My Business setup'
-  ],
-  hindiSupport: 'अब हर दुकानदार के लिए स्मार्ट डिजिटल मार्केटिंग—सिर्फ ₹89 में शुरुआत, हिंदी-CRM के साथ।',
+    'Launch a bilingual storefront, Hindi CRM and WhatsApp growth engine in 30 minutes. Sudarshan AI Labs blends Swadeshi innovation with agentic automation so every dukaan scales like a pro.',
+  highlights: ['Hindi CRM', 'WhatsApp Orders', 'SEO-ready page', 'Auto KYC', 'Google My Business setup'],
+  hindiSupport: 'अब हर दुकानदार के लिए स्मार्ट डिजिटल मार्केटिंग — सिर्फ ₹89 में शुरुआत, हिंदी-CRM और WhatsApp automation के साथ।',
   ctas: [
     { label: 'Start with ₹89', href: '#pricing', primary: true },
-    { label: 'Get Udyam Certificate Free', href: '#cta', primary: false }
+    { label: 'Claim Udyam Certificate', href: '#cta', primary: false }
   ],
   metrics: [
     { value: '+162%', label: 'Weekend hotspot footfall growth in Hazratganj' },
-    { value: '5x', label: 'Campaign ROI from Uni-Commerce pods' },
-    { value: '₹89', label: 'Launchpad to go live on Google & WhatsApp' }
+    { value: '3.4x', label: 'WhatsApp repeat orders with Vyapaar AGI' },
+    { value: '28k+', label: 'Catalog updates shipped with Sudarshan pods' }
   ]
 };
 
 export const valueCards = [
   {
-    title: 'Best Affordable Digital Marketing',
+    title: 'Best affordable digital marketing',
     description:
-      'Launch with ₹89, upgrade to ₹499/₹1599/₹1899 packs as you grow. Local SEO, reels and WhatsApp automation that actually converts.'
+      'Launch with ₹89 and graduate to ₹499 / ₹1599 / ₹1899 packs. Hyperlocal SEO, reels and WhatsApp automation stitched for Indian markets.'
   },
   {
     title: 'Agentic AI of Digital India',
     description:
-      'Your growth companion sends weekly WhatsApp reports—top sellers, missed revenue, what to post today—in Hindi and English.'
+      'Your growth companion pushes weekly WhatsApp reports — top sellers, missed revenue, festive hooks — in Hindi and English.'
   },
   {
     title: 'Hindi-first Vyapaar CRM',
     description:
-      'Talk to your CRM in Hindi voice. Get order alerts, smart invoices, inventory sync and customer insights linked to Google Sheets.'
+      'Talk to your CRM in Hindi voice. Smart invoices, inventory sync, auto ledgers and customer insights mapped to Google Sheets.'
   }
 ];
 
 export const portalSteps = [
   {
     title: '₹89 Digital Storefront (Tech Swaraj Pack)',
-    detail: 'Go live on Google with WhatsApp ordering, bilingual landing page and instant Hindi CRM setup.'
+    detail: 'Go live on Google with WhatsApp ordering, bilingual landing pages and instant Hindi CRM setup.'
   },
   {
     title: 'AI CRM & Automation',
-    detail: 'Receive daily insights, auto invoices, inventory sync with Google Sheets and smart nudges to sell more.'
+    detail: 'Daily insights, auto invoices, inventory sync with Google Sheets and nudges that move unsold stock.'
   },
   {
-    title: 'Local SEO + GMB Setup',
-    detail: 'Rank in your city within weeks with AI-optimised listings, reviews playbooks and vernacular content.'
+    title: 'Local SEO + GMB setup',
+    detail: 'Rank in your city within weeks with AI-optimised listings, review rituals and vernacular content flows.'
   },
   {
     title: 'WhatsApp Growth Engine',
-    detail: 'Catalogues, offers, repeat buyer reminders and auto-campaign pods that nurture loyal customers.'
+    detail: 'Catalogues, offer drops, repeat buyer reminders and auto-campaign pods for loyal customers.'
   },
   {
     title: 'Referral Wallet + Agentic Affiliate',
-    detail: 'Earn 5% by helping nearby shops go digital with Sudarshan Launchpad kits.'
+    detail: 'Earn 5% by helping nearby shops digitise with Sudarshan Launchpad kits.'
   }
 ];
 
@@ -89,36 +83,36 @@ export const howItWorks = [
 
 export const services = [
   {
-    name: 'Digital Marketing & SEO in Lucknow',
-    benefit: 'Get found on Google & Maps within weeks with local-first SEO rituals.'
+    name: 'Digital marketing & SEO in Lucknow',
+    benefit: 'Appear on Google & Maps within weeks with hyperlocal SEO rituals and review playbooks.'
   },
   {
-    name: 'WhatsApp Marketing Automation',
-    benefit: 'Drive repeat orders, nurture buyers and automate festive campaigns.'
+    name: 'WhatsApp marketing automation',
+    benefit: 'Drive repeat orders, nurture buyers and automate festive drip campaigns.'
   },
   {
-    name: 'E-Commerce Setup & ₹89 Storefronts',
+    name: 'E-commerce setup & ₹89 storefronts',
     benefit: 'Launch your digital store in 30 minutes with payments, catalogues and delivery workflows.'
   },
   {
-    name: 'AI-Powered Analytics & CRM',
+    name: 'AI-powered analytics & CRM',
     benefit: 'Hindi dashboards with Vyapaar intelligence, cashflow alerts and sales nudges.'
   },
   {
-    name: 'Social Media & Content Automation',
-    benefit: 'AI-generated reels, blogs and posts tailored for your mohalla and market.'
+    name: 'Social media & content automation',
+    benefit: 'AI-generated reels, blogs and posts tuned to your mohalla and market seasons.'
   },
   {
-    name: 'Free Udyam Certificate Assistance',
+    name: 'Free Udyam certificate assistance',
     benefit: 'Start GST & tender compliance at zero cost with guided onboarding.'
   }
 ];
 
 export const uspHighlights = [
-  'Swadeshi AI & Digital Swaraj – Made in India, for India.',
-  'No-Code & Low-Code AI tools designed for every business owner.',
+  'Swadeshi AI & Digital Swaraj — made in India, for India.',
+  'No-code and low-code AI tools designed for every business owner.',
   'Affordable growth packs from ₹89 to ₹1899 with transparent pricing.',
-  'AI mentorship & training for youth to become growth partners.',
+  'AI mentorship and training for youth to become growth partners.',
   'Data stored on Indian servers with MSME-compliant governance.'
 ];
 
@@ -131,15 +125,15 @@ export const missionPoints = [
 export const testimonials = [
   {
     quote: '“WhatsApp orders doubled within 4 weeks. Hindi CRM keeps my staff aligned every day.”',
-    author: 'Local Retailer, Hazratganj'
+    author: 'Retailer – Hazratganj'
   },
   {
     quote: '“More campaign ROI without extra staff. Vyapaar AGI suggests reels & offers automatically.”',
-    author: 'Boutique Owner, Gomti Nagar'
+    author: 'Boutique – Gomti Nagar'
   },
   {
     quote: '“Calendar + hooks ready to post. Our mohalla now knows every weekend combo.”',
-    author: 'Cafe Founder, Indira Nagar'
+    author: 'Cafe – Indira Nagar'
   }
 ];
 
@@ -149,7 +143,7 @@ export const pricing = [
     price: '₹89',
     description: 'Launchpad kit to go live on Google, Maps and WhatsApp in 30 minutes.',
     features: ['Hindi landing page', 'WhatsApp order form', 'Basic Vyapaar CRM', 'Udyam certificate support'],
-    ribbon: 'Best for first launch'
+    ribbon: 'Launch ready'
   },
   {
     name: 'Paramhik Kick-Start',
@@ -166,6 +160,55 @@ export const pricing = [
     ribbon: 'Scale fast'
   }
 ];
+
+export const campaignHighlights = [
+  {
+    title: 'AI Growth consultation',
+    price: '₹4,999',
+    badge: 'Strategy jam',
+    save: 'Save 18%',
+    description: '60-minute tactical session to decode funnels, offers and WhatsApp retargeting for MSMEs.'
+  },
+  {
+    title: 'Catalog builder pro',
+    price: '₹599',
+    badge: 'Smart catalog',
+    save: 'Save 88%',
+    description: 'AI-assisted product catalog with Hindi copy, SKU visuals and instant WhatsApp ordering.'
+  },
+  {
+    title: 'SEO & content boost',
+    price: '₹3,999',
+    badge: 'Rank lift',
+    save: 'Save 58%',
+    description: '90-day keyword + content sprint to rank on Google, Maps and vernacular search.'
+  }
+];
+
+export const seoBoost = [
+  {
+    title: 'Hyperlocal landing pages',
+    detail: 'City + mohalla landing pages optimised with schema, FAQs and multilingual CTAs to convert footfall into WhatsApp leads.'
+  },
+  {
+    title: 'Keyword-rich storytelling',
+    detail: 'Campaign stories blending Hindi + English keywords for Google Discover, reels and Shorts discoverability.'
+  },
+  {
+    title: 'Always-on reporting',
+    detail: 'Weekly Vyapaar AGI digest covering impressions, conversions and fresh keywords to target next.'
+  }
+];
+
+export const metaContent = {
+  title: 'Swadeshi AI | Sudarshan AI Labs – Digital Swaraj for MSMEs in India',
+  description:
+    'Join Sudarshan AI Labs’ Swadeshi AI movement. Launch a ₹89 digital store, Hindi CRM, WhatsApp automation and SEO playbooks built in Lucknow for MSMEs across India.',
+  keywords:
+    'Sudarshan AI Labs, Lucknow digital marketing, Hindi CRM, MSME AI platform, ₹89 storefront, WhatsApp automation, Swadeshi AI',
+  ogImage: 'https://sudarshanailabs.com/og-cover.png',
+  twitterHandle: '@sudarshanailabs'
+};
 
 export const eeatHighlights = [
   {

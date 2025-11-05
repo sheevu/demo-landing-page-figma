@@ -360,6 +360,16 @@ button {
   color: var(--text-primary);
 }
 
+.nav-toggle {
+  display: none;
+}
+
+.nav-stack {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .marquee {
   position: relative;
   overflow: hidden;
@@ -385,5 +395,19 @@ button {
   .theme-switcher {
     flex-wrap: wrap;
     justify-content: center;
+  }
+}
+
+@media (max-width: 960px) {
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  .nav-stack {
+    display: none !important;
+  }
+
+  .nav-stack[data-open='true'] {
+    display: grid !important;
   }
 }
